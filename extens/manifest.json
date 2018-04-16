@@ -1,0 +1,25 @@
+{
+"manifest_version": 2,
+"name": "京东优惠券",
+"version": "1.0",
+"description": "访问https://a.jd.com/?cateId=0按F12调出控制台",
+
+  "content_scripts": [
+    {
+      "matches": ["https://a.jd.com/*","https://search.jd.com/Search?coupon_batch=*"],
+      "js": ["content.js", "jquery-3.3.1.min.js"]
+    }
+  ],
+  
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html",
+    "tooltip": "my extentions"
+  },
+  
+  "permissions": ["tabs","*://*/*"],
+  "background": {
+    "scripts": ["background.js","jquery-3.3.1.min.js"],
+    "persistent": false
+  }
+}
